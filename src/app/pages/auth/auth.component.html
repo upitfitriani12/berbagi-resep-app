@@ -1,0 +1,116 @@
+<div class="flex justify-center h-screen items-center overflow-hidden">
+
+    <div class="container">
+        <div class="cover" [ngClass]="{'rotate-active':isRegister}">
+
+            <div class="front">
+                <img src="https://img.freepik.com/free-vector/female-chef-concept-illustration_114360-15290.jpg?t=st=1723802345~exp=1723805945~hmac=9e84f6ed30f222a8534211bd3ed8e7c3d79f184d3adf1ff5653d6e92d8b584bc&w=740" 
+                alt=""
+            />
+            <div class="text">
+                <span class="text-2">
+                    Berbagi Resep, Nikmati Kelezatan, dan Ciptakan Momen Spesial: Karena Setiap Hidangan Adalah Petualangan Baru!
+                </span>
+                <h1></h1>
+                <span class=" text-white">Mari Bergabung</span>
+            </div>
+
+            </div>
+            <div class="back">
+                <img src="https://img.freepik.com/premium-vector/mascot-illustration-blueberry-chef_309278-23868.jpg?w=740"
+                alt=""
+                />
+            </div>
+
+        </div>
+        <div class="from h-full">
+            <div class="form-content h-full">
+                <!--untuk register-->
+                <div class="login-form">
+                    <h1 class="text-lg-larger text-center pb-8">Daftar Akun Baru</h1>
+                    <form 
+                    [formGroup]="registerForm"
+                     (ngSubmit)="handleRegister()" 
+                     class=""
+                    >
+                        <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-600">Nama Lengkap</mat-label>
+                                <input matInput 
+                                formControlName="fullName"
+                                class="py-2 px-3 text-gray-600 mt-1 focus:shadow-outline"
+                                />
+                            </mat-form-field>
+                        </div>
+                    
+                        <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-600">Email</mat-label>
+                                <input matInput 
+                                formControlName="email"
+                                class="py-2 px-3 text-gray-600 mt-1 focus:shadow-outline"
+                                />
+                            </mat-form-field>
+                        </div>
+                    
+                        <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-600">Kata Sandi</mat-label>
+                                <input matInput 
+                                formControlName="password"
+                                class="py-2 px-3 text-gray-600 mt-1 focus:shadow-outline"
+                                />
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button class="w-full" mat-raised-button color="primary" type="submit">
+                                Mendaftar
+                            </button>
+                        </div>              
+                    </form>
+                    <div class="flex text-white-nobold items-center gap-2 justify-center mt-9">
+                        Sudah Memiliki Akun ? <button (click)="togglePanel()" mat-button color="primary">Login</button>
+                    </div>                     
+                </div>
+
+                <!--untuk login-->
+                <div class="signup-form">
+                    <h1 class="text-lg-larger text-center pb-8">Masuk Dashboard</h1>
+                    <form 
+                    [formGroup]="loginForm"
+                     (ngSubmit)="handleLogin()" 
+                     class=""
+                    >
+                       <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-600">Email</mat-label>
+                                <input matInput 
+                                formControlName="email"
+                                class="py-2 px-3 text-gray-600 mt-1 focus:shadow-outline"
+                                />
+                            </mat-form-field>
+                        </div>
+                    
+                        <div class="mb-4">
+                            <mat-form-field class="w-full">
+                                <mat-label class="text-gray-600">Kata Sandi</mat-label>
+                                <input matInput 
+                                formControlName="password"
+                                class="py-2 px-3 text-gray-600 mt-1 focus:shadow-outline"
+                                />
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button class="w-full" mat-raised-button color="primary" type="submit">
+                                Login
+                            </button>
+                        </div>              
+                    </form>
+                    <div class="flex items-center text-white-nobold gap-2 justify-center mt-9">
+                        Belum Memiliki ?<button (click)="togglePanel()"mat-button color="primary">Daftar</button>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from "./pages/navbar/navbar.component";
 import { FooterComponent } from "./pages/footer/footer.component";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
+import { AuthComponent } from "./pages/auth/auth.component";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
     RouterOutlet,
     NavbarComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+    AuthComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
