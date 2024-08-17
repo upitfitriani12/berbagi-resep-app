@@ -1,13 +1,16 @@
 <mat-card class="example-card">
     <mat-card-header>
       <img mat-card-avatar src="https://img.freepik.com/free-photo/thai-food-tom-yum-kung-river-prawn-spicy-soup_1150-35451.jpg?w=900&t=st=1722608457~exp=1722609057~hmac=8850c03b38d39908e89c5a149d7b48d55cc38cd517c19ffe635994d3a9933216" alt="">
-      <mat-card-title>Code With Fit</mat-card-title>
-      <mat-card-subtitle>Seblak</mat-card-subtitle>
+      <mat-card-title>{{recipe.user.fullName}}</mat-card-title>
+      <mat-card-subtitle>code_with_fit</mat-card-subtitle>
     </mat-card-header>
-    <img class="max-h-[400px] object-cover" mat-card-image src="https://img.freepik.com/free-photo/thai-food-tom-yum-kung-river-prawn-spicy-soup_1150-35457.jpg?w=360&t=st=1722608753~exp=1722609353~hmac=c78ae1a9a4faec3614dc3c033c090edb1eddc717a83d53b0f66959f497a5269b" alt="Photo of a Shiba Inu">
+    <img class="max-h-[400px] object-cover" 
+    mat-card-image 
+    [src]="recipe.image" 
+    alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
-        Lagi galau? Nyeblak aja hehe.
+        {{recipe.description}}
       </p>
     </mat-card-content>
     <mat-card-actions class="flex justify-between">

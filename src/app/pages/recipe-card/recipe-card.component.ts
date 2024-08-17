@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,10 +14,17 @@ import { UpdateRecipeFormComponent } from '../update-recipe-form/update-recipe-f
 })
 export class RecipeCardComponent {
 
-  constructor(public dialog:MatDialog){}
+  @Input() recipe:any
+  @Input() toggle:any
+  constructor(public dialog:MatDialog){
+  }
 
   handleOpenEditRecipeForm(){
     this.dialog.open(UpdateRecipeFormComponent)
+  }
+
+  ngOnInit(){
+    console.log("toggle ", this.toggle)
   }
 
 }

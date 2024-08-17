@@ -20,10 +20,10 @@ import { MatRadioModule } from '@angular/material/radio';
 })
 export class UpdateRecipeFormComponent {
   recipeItem:any = {
-    title:"Bakso",
-    description: "nice food",
-    foodType:'veg',
-    image:'image'
+    title:"",
+    description: "",
+    foodType:'',
+    image:''
   }
 
   onSubmit(){
