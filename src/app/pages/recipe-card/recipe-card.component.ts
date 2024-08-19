@@ -4,6 +4,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { UpdateRecipeFormComponent } from '../update-recipe-form/update-recipe-form.component';
+import { RecipeServiceService } from '../../services/Recipe/recipe-service.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -16,7 +17,10 @@ export class RecipeCardComponent {
 
   @Input() recipe:any
   @Input() toggle:any
-  constructor(public dialog:MatDialog){
+  constructor(
+    public dialog:MatDialog,
+    private recipeService:RecipeServiceService
+  ){
   }
 
   handleOpenEditRecipeForm(){
@@ -25,6 +29,10 @@ export class RecipeCardComponent {
 
   ngOnInit(){
     console.log("toggle ", this.toggle)
+  }
+
+  handleDeleteRecipe(){
+    this.recipeService.deleteRecipes(this.recipe.id).subscribe()
   }
 
 }
